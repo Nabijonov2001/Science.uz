@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Admin Dashboard</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../public/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../public/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+				<div id="intro">
+					<h1>Sience.<span style="color:orangered;">uz</span></h1>
+					<p>Ilmiy kashfiyotlar, fan-texnika olamidagi yangiliklar <br>
+					haqida eng qiziqarli maqolalar!</p>
+				</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/dashboard" class="logo">Sience.uz</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="/dashboard">Dashboard</a></li>
+							<li><a href="/dashboard/create">Yangi Post Qo`shish</a></li>
+							<li><a href="/dashboard/messages">Murojaatlar</a></li>
+						</ul>
+						<!-- <ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul> -->
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<span class="date">Admin paneli</span>
+									<h2>Barcha Postlar <br />
+									ro'yxati</h2>
+								</header>
+								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+								<!-- <ul class="actions special">
+									<li><a href="#" class="button large">Full Story</a></li>
+								</ul> -->
+							</article>
+
+						<!-- Posts -->
+							<section class="posts">
+                               
+                                    <% posts.forEach(post => { %>
+                                        <article>
+                                            <header>
+                                                <span class="date"><%= post.createdAt.getDay()+'/'+post.createdAt.getMonth()+'/'+post.createdAt.getFullYear()%> </span>
+                                                <h2><a href="/dashboard/<%= post.title_slug %> "><%= post.title %></a></h2>
+                                            </header>
+                                            <a href="/dashboard/<%= post.title_slug %> " class="image fit"><img src="<%= post.imagePath %> " alt="" /></a>
+                                            <p><%= post.header%> </p>
+                                            <ul class="actions special">
+                                                <li><a style="background-color:rgb(143, 143, 235);" href="/dashboard/<%= post.title_slug %> " class="button">Tahrirlash</a></li>
+                                            </ul>
+                                        </article>
+                                    <% }) %>
+                               
+								
+							</section>
+
+						<!-- Footer -->
+							<footer>
+								<div class="pagination">
+									<!--<a href="#" class="previous">Prev</a>-->
+									<a href="/dashboard?c_page=1" class="page">1</a>
+									<a href="/dashboard?c_page=2" class="page">2</a>
+									<a href="/dashboard/?c_page=3" class="page">3</a>
+								    <a href="/dashboard/?c_page=4" class="page">4</a>
+									<a href="/dashboard/?c_page=5" class="page">5</a>
+									<a href="/dashboard/?c_page=6" class="page">6</a>
+									<a href="/dashboard/?c_page=7" class="page">7</a>
+								</div>
+							</footer>
+
+					</div>
+
+				
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul>
+							<li>&copy; Sang Web Development</li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../public/assets/js/jquery.min.js"></script>
+			<script src="../public/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../public/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../public/assets/js/browser.min.js"></script>
+			<script src="../public/assets/js/breakpoints.min.js"></script>
+			<script src="../public/assets/js/util.js"></script>
+			<script src="../public/assets/js/main.js"></script>
+			
+
+	</body>
+</html>

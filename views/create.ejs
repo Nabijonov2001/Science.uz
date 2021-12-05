@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Create post</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../public/assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="../public/assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="/dashboard/create" class="logo">Sience.uz</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li class="active"><a href="/dashboard/create">Yangi Post Qo`shish</a></li>
+                <li><a href="/dashboard/messages">Murojaatlar</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <h2>Yangi Post Yaratish</h2>
+
+            <form method="post" action="/dashboard/create" enctype="multipart/form-data">
+                <div class="row gtr-uniform">
+                    
+                    <!-- Break -->
+                    <div class="col-12">
+                        <textarea name="title" id="title" placeholder="Post sarlavhasini kiriting" rows="3" required></textarea>
+                    </div>
+
+                    <!-- Break -->
+                    <div class="col-12">
+                        <textarea name="snippet" id="snippet" placeholder="Postning qisqacha ma`nosi" rows="4" required></textarea>
+                    </div>
+
+                    <!-- Break -->
+                    <div class="col-12">
+                        <textarea name="bodytext" id="bodytext" placeholder="To`liq matnni kiriting" rows="10" required></textarea>
+                    </div>
+
+                    <div class="col-6">
+                         <label for="image">Post  uchun rasm yuklang</label>
+                        <input type="file" name="image" required/>
+                    </div>
+
+                    <!-- Break -->
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><button type="submit"  class="primary" id="update">Submit</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+
+            <hr />
+
+        
+        
+        </div>
+
+            
+
+
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>&copy; Sang Web Development</li>
+            </ul>
+        </div>
+
+    </div>
+
+   
+
+</body>
+
+</html>

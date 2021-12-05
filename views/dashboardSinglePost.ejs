@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Generic Page - Massively by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../public/assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="../public/assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Massively</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/dashboard/create">Yangi Post Qo`shish</a></li>
+                <li><a href="/dashboard/messages">Murojaatlar</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Form -->
+            <h2>Post Tahrirlash</h2>
+            
+                <div class="row gtr-uniform">
+                    <div class="col-12">
+                        <label for="title">
+                            <h3>Title</h3>
+                        </label>
+                        <textarea style="font-weight:bold; font-size: large;" name="title" id="title"
+                            rows="3"><%= post.title %></textarea>
+                    </div>
+
+
+                    <div class="col-12">
+                        <label for="header">
+                            <h3>Header</h3>
+                        </label>
+                        <textarea style="font-weight: bold;" name="header" id="header-text"
+                            rows="5"><%= post.header %></textarea>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="main">
+                            <h3>Main</h3>
+                        </label>
+                        <textarea name="main" id="main-text" rows="12"><%= post.main %></textarea>
+                    </div>
+
+                    <div class="col-6">
+                        <label for="image">Post uchun rasm yuklang</label>
+                        <input type="file" name="image" id="image" required />
+                    </div>
+
+                    <!-- Break -->
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><button type="submit" data-url="<%= post.title_slug %>" class="primary" id="btn">Update Post</button></li>
+                            <li><button data-doc="<%= post.title_slug %> " style="background-color: red;" class="primary" id="delete">Delete Post</button></li>
+                        </ul>
+                    </div>
+                </div>
+           
+
+            <hr />
+        </div>
+
+
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>&copy; Sang Web Development</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // const form = document.querySelector('#upload')
+        const btn = document.querySelector('#btn')
+        const title = document.querySelector('#title')
+        const header = document.querySelector('#header-text')
+        const main = document.querySelector('#main-text')
+        const image = document.querySelector('#image')
+        
+
+        btn.addEventListener('click', (e)=>{
+
+            let data = new FormData()
+            data.append('title', title.value)
+            data.append('header', header.value)
+            data.append('main', main.value)
+            data.append('image', image.files[0])
+        
+            fetch(`/dashboard/${btn.dataset.url}`, {
+                method:"Put",
+                body:data
+            })
+            .then(response => response.json())
+            .then(result => window.location.reload('/dashboard'))
+            })
+
+        const delbtn = document.querySelector('#delete')
+        delbtn.addEventListener('click', async (e)=>{
+            fetch(`dashboard/${delbtn.dataset.doc}`, {
+                method:'Delete'
+            })
+            .then((response=>response.json()))
+            .then((data)=> window.location.reload('/dashboard'))
+            .catch(err =>console.log(err));
+            
+            
+        })
+
+        
+    </script>
+
+</body>
+
+</html>

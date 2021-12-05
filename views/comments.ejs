@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Messages</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../public/assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="../public/assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="/dashboard" class="logo">Sinence.uz</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/dashboard/create">Yangi Post Qo`shish</a></li>
+                <li class="active"><a  href="/dashboard/messages">Murojaatlar</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <section class="post">
+
+                <% messages.forEach(element => { %>
+                  
+                    <!-- Box -->
+                <h2><%= element.name %> </h2>
+                <div class="box">
+                    <p><%= element.message %> </p>
+                </div>
+
+                <hr />
+
+                <% }) %>
+                
+            </section>
+
+        </div>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>&copy; Sang Web Development</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../public/assets/js/jquery.min.js"></script>
+    <script src="../public/assets/js/jquery.scrollex.min.js"></script>
+    <script src="../public/assets/js/jquery.scrolly.min.js"></script>
+    <script src="../public/assets/js/browser.min.js"></script>
+    <script src="../public/assets/js/breakpoints.min.js"></script>
+    <script src="../public/assets/js/util.js"></script>
+    <script src="../public/assets/js/main.js"></script>
+
+</body>
+
+</html>
